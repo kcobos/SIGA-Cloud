@@ -9,3 +9,9 @@ The main information in this system is the parking occupation and location and u
 ## Cloud architecture
 
 SIGA cloud architecture is an hybridization between microservices architecture, multilayer architecture and event-driven architecture. More information [here](docs/architecture.md).
+
+## Tools
+
+The GoLang will be chosen for much of the project. Due to that, the **build tool** will be Go itself.
+
+But a cloud project needs a task manager. There are two main tasks manager written in GoLang [Task](https://github.com/go-task/task) and [Robo](https://github.com/tj/robo). As we can see on them repositories, *Task* is updated later and it has more contributors than Robo and the first has a lot of [documentation](https://taskfile.dev). So, I am going to choose **Tasks** as a task manager.
