@@ -1,0 +1,6 @@
+parkinghist: parkinghist/models/phist.go
+parking: parking/models/parking.go
+status: parking/models/status.go
+place: place/models/place.go
+user: user/models/user.go
+accreditation: user/models/accreditation.go
