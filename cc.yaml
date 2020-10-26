@@ -1,5 +1,7 @@
-parkinghist: parkinghist/models/phist.go
-parking: parking/models/parking.go
-status: parking/models/status.go
-place: place/models/place.go
-user: user/models/user.go
+entidad: 
+    - parkinghist/models/parkinghist.go
+    - parking/models/parking.go
+    - parking/models/status.go
+    - place/models/place.go
+    - user/models/user.go
+    - user/models/permission.go
