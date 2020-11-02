@@ -30,6 +30,12 @@ This project follows Kanban methodology using [GitHub project](https://github.co
 - [Custom errors](parking/errors/errors.go)
 - [Controller](parking/parkings.go)
 
+### Place
+
+- [Place](place/models/place.go)
+- [Custom errors](place/errors/errors.go)
+- [Controller](place/places.go)
+
 ## Build tool
 
 The GoLang will be chosen for much of the project. Due to that, the **build tool** will be Go itself.
