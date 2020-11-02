@@ -1,4 +1,4 @@
-package parking
+package parkings
 
 import (
 	. "./models"
