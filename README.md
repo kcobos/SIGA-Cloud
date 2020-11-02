@@ -19,8 +19,18 @@ SIGA cloud architecture is an hybridization between microservices architecture, 
 - [Custom errors](parking/errors/errors.go)
 - [Controller](parking/parkings.go)
 
-## Tools
+## Build tool
 
 The GoLang will be chosen for much of the project. Due to that, the **build tool** will be Go itself.
 
-But a cloud project needs a task manager. There are two main tasks manager written in GoLang [Task](https://github.com/go-task/task) and [Robo](https://github.com/tj/robo). As we can see on them repositories, *Task* is updated later and it has more contributors than Robo and the first has a lot of [documentation](https://taskfile.dev). So, I am going to choose **Tasks** as a task manager.
+## Task runner
+
+There are two main tasks manager written in GoLang [Task](https://github.com/go-task/task) and [Robo](https://github.com/tj/robo). As we can see on them repositories, *Task* is updated later and it has more contributors than Robo and the first has a lot of [documentation](https://taskfile.dev). So, I am going to choose **Tasks** as a task manager.
+
+Tasks can be installed following [this steps](https://taskfile.dev/#/installation?id=install-script).
+
+### Task file
+
+All tasks are written in [taskfile.yml](./Taskfile.yml). Tasks are:
+
+- syntax: for checking sources syntax
