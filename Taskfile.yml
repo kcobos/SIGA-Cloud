@@ -3,5 +3,5 @@ version: '3'
 tasks:
   syntax:
     cmds:
-      - go build ./parking/
+      - go build ./parking/ && echo "Sintax valid" || echo "Sintax invalid"
     silent: true
