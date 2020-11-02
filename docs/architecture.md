@@ -11,7 +11,3 @@ To fix this, the calls between microservices could be asynchronous, so we could 
 In addition to microservices, the system needs a configuration method to change all microservices as easily as possible. In addition, the system needs a central registry to improve it and check for problems quickly.
 
 The system needs an API gateway to be able to change the cloud without changing the applications that connect to this cloud and to balance the load if one service, or more, scales.
-
-A picture is worth a thousand words:
-
-![Siga cloud overview](SIGA-cloud_overview.png)
