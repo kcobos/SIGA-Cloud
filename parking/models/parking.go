@@ -1,5 +1,7 @@
 package parking
 
+import "../errors"
+
 // Parking represents a car park
 type Parking struct {
 	_ID      int
@@ -8,16 +10,16 @@ type Parking struct {
 }
 
 // Status returns current Parking status
-func (p *Parking) Status() string {
-
+func (p *Parking) Status() parkingStatus {
+	return p._status
 }
 
 // ChangeStatus sets new status to Parking if it's valid
-func (p *Parking) ChangeStatus(newStatus string) bool {
-
-}
-
-// AddToPlace attaches a Place to a Parking
-func (p *Parking) AddToPlace(placeID int) {
-
+func (p *Parking) ChangeStatus(newStatus string) (bool, error) {
+	status := getStatus(newStatus)
+	if status > -2 {
+		p._status = status
+		return true, nil
+	}
+	return false, &errors.StatusNotValid{}
 }

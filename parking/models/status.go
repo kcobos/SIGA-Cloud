@@ -3,7 +3,20 @@ package parking
 type parkingStatus int
 
 const (
-	undefined parkingStatus	= -1
-	free                    = 0
-	occupied                = 1
+	statusNotValid parkingStatus = iota -2
+	undefined
+	free
+	occupied
 )
+
+func getStatus(newStatus string) parkingStatus {
+	switch newStatus {
+	case "undefined":
+		return undefined
+	case "free":
+		return free
+	case "occupied":
+		return occupied
+	}
+	return statusNotValid
+}

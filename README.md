@@ -10,6 +10,15 @@ The main information in this system is the parking occupation and location and u
 
 SIGA cloud architecture is an hybridization between microservices architecture, multilayer architecture and event-driven architecture. More information [here](docs/architecture.md).
 
+## Classes
+
+### Parking
+
+- [Parking](parking/models/parking.go)
+- [Parking statuses](parking/models/status.go)
+- [Custom errors](parking/errors/errors.go)
+- [Controller](parking/parkings.go)
+
 ## Tools
 
 The GoLang will be chosen for much of the project. Due to that, the **build tool** will be Go itself.
