@@ -10,6 +10,17 @@ The main information in this system is the parking occupation and location and u
 
 SIGA cloud architecture is an hybridization between microservices architecture, multilayer architecture and event-driven architecture. More information [here](docs/architecture.md).
 
+## Road map
+
+All milestones of this project must be a product. Due to that, we have the next planning:
+
+1. Basic administration: set up the project for a basic administration functionalities.
+2. Basic functionalities: add functionalities to user can use the system.
+3. Advance administration: add admins and operators functionalities.
+4. Advance functionalities: add functionalities like look for a place.
+
+This project follows Kanban methodology using [GitHub project](https://github.com/kcobos/SIGA-Cloud/projects/2). The tasks on the top of "To do" and "In progress" lists have to do before than others.
+
 ## Classes
 
 ### Parking
@@ -25,7 +36,7 @@ The GoLang will be chosen for much of the project. Due to that, the **build tool
 
 ## Task runner
 
-There are two main tasks manager written in GoLang [Task](https://github.com/go-task/task) and [Robo](https://github.com/tj/robo). As we can see on them repositories, *Task* is updated later and it has more contributors than Robo and the first has a lot of [documentation](https://taskfile.dev). So, I am going to choose **Tasks** as a task manager.
+There are two main tasks manager written in GoLang [Task](https://github.com/go-task/task) and [Robo](https://github.com/tj/robo). As we can see on them repositories, *Task* is updated later and it has more contributors than Robo and the first has a lot of [documentation](https://taskfile.dev). So, we are going to choose **Tasks** as a task manager.
 
 Tasks can be installed following [this steps](https://taskfile.dev/#/installation?id=install-script).
 
