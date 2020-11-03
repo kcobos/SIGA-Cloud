@@ -14,8 +14,13 @@ SIGA cloud architecture is an hybridization between microservices architecture, 
 
 All milestones of this project must be a product. Due to that, we have the next planning:
 
-1. Basic administration: set up the project for a basic administration functionalities.
-2. Basic functionalities: add functionalities to user can use the system.
+1. Basic administration: set up the project for a basic administration functionalities. User stories:
+   1. [Set up parking sensor](https://github.com/kcobos/SIGA-Cloud/issues/2)
+   2. [Set up a parking place](https://github.com/kcobos/SIGA-Cloud/issues/3)
+   3. [Show parkings](https://github.com/kcobos/SIGA-Cloud/issues/16)
+2. Basic functionalities: add functionalities to user can use the system. User stories:
+   1. [Update parking](https://github.com/kcobos/SIGA-Cloud/issues/7)
+   2. [Show places](https://github.com/kcobos/SIGA-Cloud/issues/6)
 3. Advance administration: add admins and operators functionalities.
 4. Advance functionalities: add functionalities like look for a place.
 
