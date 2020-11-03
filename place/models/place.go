@@ -11,10 +11,15 @@ type Place struct {
 
 // Coordinates returns Place location
 func (p *Place) Coordinates() (float64, float64) {
-
+	return p._latitude, p._longitude
 }
 
-// AddParking adds a Parking to a Place
-func (p *Place) AddParking(parkingID int) bool {
+// Address returns Place address
+func (p *Place) Address() string{
+	return p._address
+}
 
+// Parkings returns Place total parkings and free
+func (p *Place) Parkings() (int, int) {
+	return len(p._parkings), p._freeParkings
 }
