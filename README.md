@@ -56,3 +56,9 @@ Tasks can be installed following [this steps](https://taskfile.dev/#/installatio
 All tasks are written in [taskfile.yml](./Taskfile.yml). Tasks are:
 
 - syntax: for checking sources syntax
+
+## Tests
+
+GoLang has a main official package for automated testing and benchmarking called [Testing](https://golang.org/pkg/testing/) but it doesn't have assertions, so we have to choose a library to code faster. In this [repo](https://github.com/bmuschko/go-testing-frameworks) there is a comparison between a lot of GoLang testing libraries.
+
+For this project, we are going to choose [Testify](https://github.com/stretchr/testify) for now. Later, maybe, we are going to choose [Goblin](https://github.com/franela/goblin) for BDD.
