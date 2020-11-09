@@ -1,8 +1,8 @@
 package parkings
 
 import (
-	. "./models"
-	"./errors"
+	"./internal/errors"
+	. "./internal/models"
 )
 
 // Parkings represents a list of Parkings.
