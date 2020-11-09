@@ -14,15 +14,19 @@ SIGA cloud architecture is an hybridization between microservices architecture, 
 
 All milestones of this project must be a product. Due to that, we have the next planning:
 
-1. Basic administration: set up the project for a basic administration functionalities. User stories:
+1. Basic list: System has to list all city parking places to show them in a list or in a map. User stories:
    1. [Set up parking sensor](https://github.com/kcobos/SIGA-Cloud/issues/2)
    2. [Set up a parking place](https://github.com/kcobos/SIGA-Cloud/issues/3)
    3. [Show parkings](https://github.com/kcobos/SIGA-Cloud/issues/16)
-2. Basic functionalities: add functionalities to user can use the system. User stories:
+   4. [Show places](https://github.com/kcobos/SIGA-Cloud/issues/6)
+2. Parking status: All parking places in the system must be updated if the parking lot get occupied or freed. User stories:
    1. [Update parking](https://github.com/kcobos/SIGA-Cloud/issues/7)
    2. [Show places](https://github.com/kcobos/SIGA-Cloud/issues/6)
-3. Advance administration: add admins and operators functionalities.
-4. Advance functionalities: add functionalities like look for a place.
+3. Reports: System has to log parking statuses and show reports. User stories:
+   1. [Get parking report](https://github.com/kcobos/SIGA-Cloud/issues/9)
+4. Navigation: Users can navigate to places and get notify if the place become occupied. User stories:
+   1. [Find place](https://github.com/kcobos/SIGA-Cloud/issues/15)
+   2. [Place navigation](https://github.com/kcobos/SIGA-Cloud/issues/8)
 
 This project follows Kanban methodology using [GitHub project](https://github.com/kcobos/SIGA-Cloud/projects/2). The tasks on the top of "To do" and "In progress" lists have to do before than others.
 
