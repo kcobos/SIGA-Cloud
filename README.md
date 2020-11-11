@@ -65,4 +65,4 @@ All tasks are written in [taskfile.yml](./Taskfile.yml). Tasks are:
 
 GoLang has a main official package for automated testing and benchmarking called [Testing](https://golang.org/pkg/testing/) but it doesn't have assertions, so we have to choose a library to code faster. In this [repo](https://github.com/bmuschko/go-testing-frameworks) there is a comparison between a lot of GoLang testing libraries.
 
-For this project, we are going to choose [Testify](https://github.com/stretchr/testify) for now. Later, maybe, we are going to choose [Goblin](https://github.com/franela/goblin) for BDD.
+For this project, we are going to choose [Testify](https://github.com/stretchr/testify) to test issues and [Goblin](https://github.com/franela/goblin) to test user stories like BDD. We have chose that two due to their community and simplicity (we don't need a web interface for testing for now).
