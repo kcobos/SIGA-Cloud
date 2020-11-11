@@ -1,4 +1,6 @@
 entidad: 
-    - parking/models/parking.go
-    - parking/models/status.go
-    - place/models/place.go
+    - internal/models/parking/parking.go
+    - internal/models/parking/status.go
+    - internal/parkings.go
+    - internal/models/place/place.go
+    - internal/places.go
