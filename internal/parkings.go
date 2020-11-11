@@ -11,11 +11,13 @@ type Parkings struct {
 	lastID      int
 }
 
-// Init initialize Parkings struct.
+// NewParkings initialize Parkings struct
 // It sets the map and the last ID
-func (p *Parkings) Init() {
+func NewParkings() *Parkings {
+	p := new(Parkings)
 	p.parkingList = make(map[int]Parking)
 	p.lastID = 0
+	return p
 }
 
 // Len returns length of parking list if it is initialized
