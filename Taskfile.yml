@@ -2,7 +2,7 @@ version: '3'
 
 tasks:
   syntax:
+    desc: Check project syntax.
     cmds:
-      - go build ./parking/ && echo "Sintax valid for parking module" || echo "Sintax invalid for parking module"
-      - go build ./place/ && echo "Sintax valid for place module" || echo "Sintax invalid for place module"
+      - go build ./internal/ && echo "Sintax valid for parking module" || echo "Sintax invalid for parking module"
     silent: true
