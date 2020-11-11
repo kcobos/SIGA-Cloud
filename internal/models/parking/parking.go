@@ -11,6 +11,15 @@ type Parking struct {
 	placeID int
 }
 
+// NewParking create a parking object
+func NewParking(id int) *Parking {
+	p := new(Parking)
+	p.id = id
+	p.status = statusNotValid
+	p.placeID = -1
+	return p
+}
+
 // ID return the Parking identifier
 func (p *Parking) ID() int {
 	return p.id
