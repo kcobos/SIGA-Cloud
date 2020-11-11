@@ -6,3 +6,8 @@ tasks:
     cmds:
       - go build ./internal/ && echo "Sintax valid for parking module" || echo "Sintax invalid for parking module"
     silent: true
+
+  test:
+    desc: Run project tests.
+    cmds: 
+      - go test ./internal/...
