@@ -1,8 +1,8 @@
-package parkings
+package controller
 
 import (
-	"./internal/errors"
-	. "./internal/models"
+	"github.com/kcobos/SIGA-Cloud/internal/errors"
+	. "github.com/kcobos/SIGA-Cloud/internal/models/parking"
 )
 
 // Parkings represents a list of Parkings.

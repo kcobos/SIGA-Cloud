@@ -1,8 +1,8 @@
-package places
+package controller
 
 import (
-	. "./models"
-	"./errors"
+	"github.com/kcobos/SIGA-Cloud/internal/errors"
+	. "github.com/kcobos/SIGA-Cloud/internal/models/place"
 )
 
 // Places represents a list of Places.

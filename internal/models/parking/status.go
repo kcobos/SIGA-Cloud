@@ -1,15 +1,15 @@
 package parking
 
-type parkingStatus int
+type ParkingStatus int
 
 const (
-	statusNotValid parkingStatus = iota -2
+	statusNotValid ParkingStatus = iota -2
 	undefined
 	free
 	occupied
 )
 
-func getStatus(newStatus string) parkingStatus {
+func getStatus(newStatus string) ParkingStatus {
 	switch newStatus {
 	case "undefined":
 		return undefined
