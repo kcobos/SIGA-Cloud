@@ -9,7 +9,7 @@ import (
 
 func TestNewParkingController(t *testing.T) {
 	g := Goblin(t)
-	g.Describe("Controller need to be initialized", func() {
+	g.Describe("Controller need to be initialized (HU #2)", func() {
 		parkings := NewParkings()
 		g.It("Parking ID starts at 0", func() {
 			g.Assert(parkings.lastID).Equal(-1)
@@ -33,7 +33,7 @@ func TestNewParkingController(t *testing.T) {
 
 func TestAddNewParking(t *testing.T) {
 	g := Goblin(t)
-	g.Describe("Add new parking", func() {
+	g.Describe("Add new parking (HU #2)", func() {
 		parkings := NewParkings()
 		g.It("When a new parking is added, update the ID", func() {
 			for id := 0; id < 3; id++ {
