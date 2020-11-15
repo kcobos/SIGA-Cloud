@@ -35,3 +35,11 @@ type ParkingSensorIsAlreadyAttached struct {
 func (e *ParkingSensorIsAlreadyAttached) Error() string {
 	return fmt.Sprintf("Parking sensor is attached to other place")
 }
+
+// PlaceAlreadyExists error
+type PlaceAlreadyExists struct {
+}
+
+func (e *PlaceAlreadyExists) Error() string {
+	return fmt.Sprintf("Place address or coordinates already exists")
+}

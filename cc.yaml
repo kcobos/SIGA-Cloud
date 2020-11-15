@@ -9,3 +9,4 @@ test:
     - internal/models/parking_test.go
     - internal/controllers/parkings_test.go
     - internal/models/place_test.go
+    - internal/controllers/places_test.go
