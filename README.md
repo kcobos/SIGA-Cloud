@@ -32,18 +32,12 @@ This project follows Kanban methodology using [GitHub project](https://github.co
 
 ## Classes
 
-### Parking
-
-- [Parking](parking/models/parking.go)
-- [Parking statuses](parking/models/status.go)
-- [Custom errors](parking/errors/errors.go)
-- [Controller](parking/parkings.go)
-
-### Place
-
-- [Place](place/models/place.go)
-- [Custom errors](place/errors/errors.go)
-- [Controller](place/places.go)
+- [Custom errors](internal/errors/errors.go)
+- [Parking](internal/models/parking.go)
+- [Parking statuses](internal/models/status.go)
+- [Parking controller](internal/controllers/parkings.go)
+- [Place](internal/models/place.go)
+- [Place controller](internal/controllers/places.go)
 
 ## Build tool
 

@@ -1,9 +1,9 @@
-package parking
+package model
 
 type ParkingStatus int
 
 const (
-	statusNotValid ParkingStatus = iota -2
+	statusNotValid ParkingStatus = iota - 2
 	undefined
 	free
 	occupied

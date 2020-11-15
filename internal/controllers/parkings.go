@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
-	. "github.com/kcobos/SIGA-Cloud/internal/models/parking"
+	. "github.com/kcobos/SIGA-Cloud/internal/models"
 )
 
 // Parkings represents a list of Parkings.

@@ -2,13 +2,13 @@ package controller
 
 import (
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
-	. "github.com/kcobos/SIGA-Cloud/internal/models/place"
+	. "github.com/kcobos/SIGA-Cloud/internal/models"
 )
 
 // Places represents a list of Places.
 type Places struct {
 	placeList map[int]Place
-	lastID      int
+	lastID    int
 }
 
 // Init initialize Places struct.

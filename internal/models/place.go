@@ -1,4 +1,4 @@
-package place
+package model
 
 // Place represents a parking location
 type Place struct {
@@ -15,7 +15,7 @@ func (p *Place) Coordinates() (float64, float64) {
 }
 
 // Address returns Place address
-func (p *Place) Address() string{
+func (p *Place) Address() string {
 	return p._address
 }
 

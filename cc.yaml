@@ -1,6 +1,10 @@
 entidad: 
-    - internal/models/parking/parking.go
-    - internal/models/parking/status.go
-    - internal/parkings.go
-    - internal/models/place/place.go
-    - internal/places.go
+    - internal/models/parking.go
+    - internal/models/status.go
+    - internal/controllers/parkings.go
+    - internal/models/place.go
+    - internal/controllers/places.go
+lenguaje: go
+test:
+    - internal/models/parking_test.go
+    - internal/controllers/parkings_test.go

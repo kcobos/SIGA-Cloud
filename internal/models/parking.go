@@ -1,4 +1,4 @@
-package parking
+package model
 
 import (
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
