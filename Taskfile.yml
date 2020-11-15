@@ -4,7 +4,7 @@ tasks:
   syntax:
     desc: Check project syntax.
     cmds:
-      - go build ./internal/... && echo "Sintax valid for parking module" || echo "Sintax invalid for parking module"
+      - go build ./internal/... && echo "Syntax valid for parking module" || echo "Syntax invalid for parking module"
     silent: true
 
   test:
