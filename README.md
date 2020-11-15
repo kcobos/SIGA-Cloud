@@ -49,6 +49,12 @@ There are two main tasks manager written in GoLang [Task](https://github.com/go-
 
 Tasks can be installed following [this steps](https://taskfile.dev/#/installation?id=install-script).
 
+To run any task, run:
+
+```bash
+task name-of-task
+```
+
 ### Task file
 
 All tasks are written in [taskfile.yml](./Taskfile.yml). Tasks are:
@@ -64,6 +70,12 @@ GoLang has a main official package for automated testing and benchmarking called
 For this project, [Goblin](https://github.com/franela/goblin) to test user stories like BDD. For bug and  enhancement issues we are going to choose [Testify](https://github.com/stretchr/testify) because maybe these issues don't have an user story. We have chosen that two due to their community and simplicity and we don't need a web interface for testing for now like [GoCenvey](https://github.com/smartystreets/goconvey).
 
 We choose for reference the user story in the description each test.
+
+To test this project, run:
+
+```bash
+task test
+```
 
 ### Test files
 
