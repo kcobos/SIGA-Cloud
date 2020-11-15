@@ -3,16 +3,13 @@ package model
 type ParkingStatus int
 
 const (
-	statusNotValid ParkingStatus = iota - 2
-	undefined
+	statusNotValid ParkingStatus = iota - 1
 	free
 	occupied
 )
 
 func getStatus(newStatus string) ParkingStatus {
 	switch newStatus {
-	case "undefined":
-		return undefined
 	case "free":
 		return free
 	case "occupied":
