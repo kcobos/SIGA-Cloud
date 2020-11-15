@@ -53,7 +53,9 @@ Tasks can be installed following [this steps](https://taskfile.dev/#/installatio
 
 All tasks are written in [taskfile.yml](./Taskfile.yml). Tasks are:
 
-- syntax: for checking sources syntax
+- syntax: for checking sources syntax.
+- test: for testing all project. See [tests](#test-files).
+- installdeps: Install project dependencies. See [dependencies](go.mod).
 
 ## Tests (CC HITO 2)
 
@@ -62,3 +64,10 @@ GoLang has a main official package for automated testing and benchmarking called
 For this project, [Goblin](https://github.com/franela/goblin) to test user stories like BDD. For bug and  enhancement issues we are going to choose [Testify](https://github.com/stretchr/testify) because maybe these issues don't have an user story. We have chosen that two due to their community and simplicity and we don't need a web interface for testing for now like [GoCenvey](https://github.com/smartystreets/goconvey).
 
 We choose for reference the user story in the description each test.
+
+### Test files
+
+- [Parking test](internal/models/parking_test.go)
+- [Parking controller test](internal/controllers/parkings_test.go)
+- [Place test](internal/models/place_test.go)
+- [Place controller test](internal/controllers/places_test.go)

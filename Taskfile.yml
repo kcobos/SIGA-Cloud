@@ -11,3 +11,8 @@ tasks:
     desc: Run project tests.
     cmds: 
       - go test ./internal/...
+
+  installdeps:
+    desc: Install project dependencies.
+    cmds:
+      - go mod download

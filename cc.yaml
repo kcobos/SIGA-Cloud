@@ -10,3 +10,4 @@ test:
     - internal/controllers/parkings_test.go
     - internal/models/place_test.go
     - internal/controllers/places_test.go
+fichero_tareas: Taskfile.yml
