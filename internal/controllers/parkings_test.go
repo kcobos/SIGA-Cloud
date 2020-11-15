@@ -9,7 +9,7 @@ import (
 
 func TestNewParkingController(t *testing.T) {
 	g := Goblin(t)
-	g.Describe("Controller need to be initialized (HU #2)", func() {
+	g.Describe("Controller need to be initialized (#24)", func() {
 		parkings := NewParkings()
 		g.It("Parking ID starts at 0", func() {
 			g.Assert(parkings.lastID).Equal(-1)
@@ -21,7 +21,7 @@ func TestNewParkingController(t *testing.T) {
 			g.Assert(err).IsNil()
 		})
 	})
-	g.Describe("Controller not initialized", func() {
+	g.Describe("Controller not initialized (#24)", func() {
 		var parkings Parkings
 		g.It("If controller is not initialized, raise an error", func() {
 			g.Assert(parkings.lastID).IsZero()
@@ -52,6 +52,13 @@ func TestAddNewParking(t *testing.T) {
 				_, err := parkings.parkingList[id].Status()
 				g.Assert(err).Equal(&errors.StatusNotValid{})
 			}
+		})
+	})
+	g.Describe("Controller not initialized (#24)", func() {
+		var parkings Parkings
+		g.It("If controller is not initialized, raise an error", func() {
+			_, err := parkings.NewParking()
+			g.Assert(err).Equal(&errors.NotInitialized{})
 		})
 	})
 }
