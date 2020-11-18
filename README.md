@@ -43,7 +43,7 @@ This project follows Kanban methodology using [GitHub project](https://github.co
 
 The GoLang will be chosen for much of the project. Due to that, the **build tool** will be Go itself.
 
-## Task runner
+## Task runner (CC Hito 2)
 
 There are few tasks manager written in GoLang like [Task](https://github.com/go-task/task), [Robo](https://github.com/tj/robo), [go-task](https://github.com/leandroveronezi/go-task), [realize](https://github.com/oxequa/realize). As we can see on them repositories, *Task* has been updated later and it has more contributors than the others and it has a lot of [documentation](https://taskfile.dev). So, we are going to choose **Tasks** as a task manager because it seems simpler and we only write tasks in a yaml file.
 
