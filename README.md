@@ -83,3 +83,21 @@ task test
 - [Parking controller test](internal/controllers/parkings_test.go)
 - [Place test](internal/models/place_test.go)
 - [Place controller test](internal/controllers/places_test.go)
+
+## Dockerize for testing
+
+First of all, we must say we have chosen GoLang as programming language and our task runner is also written in GoLang too, so we don't need more than Go. There is no code which needs special libraries for now.
+
+We have looked for Linux built Go images and we have found:
+
+- **golang**: official image without any user. This image is built to Linux main platforms (x86, x86-64, ARM, ARM64). It has these tags:
+  - normal ([debian buster](https://github.com/docker-library/golang/blob/a7f393378d8566caf777ad2e6b9dc9d014875a88/1.15/buster/Dockerfile)). Uncompressed size: 839 MB
+  - [alpine](https://github.com/docker-library/golang/blob/a7f393378d8566caf777ad2e6b9dc9d014875a88/1.15/alpine3.12/Dockerfile). Uncompressed size: 300 MB
+- **neroinc/fedora-golang**: non official image without any user. It has an example program.
+  - [normal](https://github.com/NeroINC/docker/blob/master/fedora-golang/Dockerfile). Uncompressed size: 877 MB
+- **jcajka/fedora-golang**: non official image without any user.
+  - [normal](https://github.com/jcajka/fedora-golang/blob/master/f25/Dockerfile). Uncompressed size: 516 MB
+
+So, the best option to build an image for that project is from *golang:alpine* image due it is official and it is the smallest. It is even used in [docker examples](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds).
+
+Due this image is for testing, we cannot optimize the image because we cannot do a [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds) build.
