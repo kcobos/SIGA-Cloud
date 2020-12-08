@@ -2,12 +2,12 @@ package controller
 
 import (
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
-	. "github.com/kcobos/SIGA-Cloud/internal/models"
+	model "github.com/kcobos/SIGA-Cloud/internal/models"
 )
 
 // Places represents a list of Places.
 type Places struct {
-	placeList map[int]*Place
+	placeList map[int]*model.Place
 	lastID    int
 }
 
@@ -15,7 +15,7 @@ type Places struct {
 // It sets the map and the last ID
 func NewPlaces() *Places {
 	p := new(Places)
-	p.placeList = make(map[int]*Place)
+	p.placeList = make(map[int]*model.Place)
 	p.lastID = -1
 	return p
 }
@@ -30,7 +30,7 @@ func (p *Places) Len() (int, error) {
 
 // NewPlace appends a new place to the list of places
 // Return the new id
-func (p *Places) NewPlace(latitude, longitude float64, address string, parkings []*Parking) (int, error) {
+func (p *Places) NewPlace(latitude, longitude float64, address string, parkings []*model.Parking) (int, error) {
 	if p.placeList == nil {
 		return -1, &errors.NotInitialized{}
 	}
@@ -44,7 +44,7 @@ func (p *Places) NewPlace(latitude, longitude float64, address string, parkings 
 		}
 	}
 
-	place, err := NewPlace(p.lastID+1, latitude, longitude, address, parkings)
+	place, err := model.NewPlace(p.lastID+1, latitude, longitude, address, parkings)
 	if err != nil {
 		return -1, err
 	}

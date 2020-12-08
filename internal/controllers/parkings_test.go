@@ -37,8 +37,8 @@ func TestAddNewParking(t *testing.T) {
 		parkings := NewParkings()
 		g.It("When a new parking is added, update the ID", func() {
 			for id := 0; id < 3; id++ {
-				new_id, err := parkings.NewParking()
-				g.Assert(new_id).Equal(id)
+				newID, err := parkings.NewParking()
+				g.Assert(newID).Equal(id)
 				g.Assert(err).IsNil()
 			}
 		})

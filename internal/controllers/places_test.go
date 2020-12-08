@@ -44,12 +44,12 @@ func TestAddNewPlace(t *testing.T) {
 
 		g.It("When a new place is added, update the ID", func() {
 			for id := 0; id < 3; id++ {
-				new_id, err := places.NewPlace(
+				newID, err := places.NewPlace(
 					37.181024+float64(id), -3.592526+float64(id),
 					fmt.Sprintf("Cuesta de las Cabras, nº %d", id),
 					[]*Parking{parkings[id]},
 				)
-				g.Assert(new_id).Equal(id)
+				g.Assert(newID).Equal(id)
 				g.Assert(err).IsNil()
 			}
 		})
@@ -89,12 +89,12 @@ func TestAddNewPlace(t *testing.T) {
 		}
 		g.It("When a new place is added, update the ID. When fails (Coordinates), don't change ID", func() {
 			for id := 0; id < 3; id++ {
-				new_id, err := places.NewPlace(
+				newID, err := places.NewPlace(
 					37.181024+float64(id), -3.592526+float64(id),
 					fmt.Sprintf("Cuesta de las Cabras, nº %d", id),
 					[]*Parking{parkings[id]},
 				)
-				g.Assert(new_id).Equal(-1)
+				g.Assert(newID).Equal(-1)
 				g.Assert(err).Equal(&errors.PlaceAlreadyExists{})
 				g.Assert(places.lastID).Equal(2)
 				len, _ := places.Len()
@@ -103,12 +103,12 @@ func TestAddNewPlace(t *testing.T) {
 		})
 		g.It("When a new place is added, update the ID. When fails (Address), don't change ID", func() {
 			for id := 0; id < 3; id++ {
-				new_id, err := places.NewPlace(
+				newID, err := places.NewPlace(
 					37.181024+float64(id)+3, -3.592526+float64(id)+3,
 					fmt.Sprintf("Cuesta de las Cabras, nº %d", id),
 					[]*Parking{parkings[id]},
 				)
-				g.Assert(new_id).Equal(-1)
+				g.Assert(newID).Equal(-1)
 				g.Assert(err).Equal(&errors.PlaceAlreadyExists{})
 				g.Assert(places.lastID).Equal(2)
 				len, _ := places.Len()
@@ -117,12 +117,12 @@ func TestAddNewPlace(t *testing.T) {
 		})
 		g.It("When a new place is added, update the ID. When fails (Parkings), don't change ID", func() {
 			for id := 0; id < 3; id++ {
-				new_id, err := places.NewPlace(
+				newID, err := places.NewPlace(
 					37.181024+float64(id)+3, -3.592526+float64(id)+3,
 					fmt.Sprintf("Cuesta de las Cabras, nº %d", id+3),
 					[]*Parking{parkings[id]},
 				)
-				g.Assert(new_id).Equal(-1)
+				g.Assert(newID).Equal(-1)
 				g.Assert(err).Equal(&errors.ParkingSensorIsAlreadyAttached{})
 				g.Assert(places.lastID).Equal(2)
 				len, _ := places.Len()

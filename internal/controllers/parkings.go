@@ -2,12 +2,12 @@ package controller
 
 import (
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
-	. "github.com/kcobos/SIGA-Cloud/internal/models"
+	model "github.com/kcobos/SIGA-Cloud/internal/models"
 )
 
 // Parkings represents a list of Parkings.
 type Parkings struct {
-	parkingList map[int]*Parking
+	parkingList map[int]*model.Parking
 	lastID      int
 }
 
@@ -15,7 +15,7 @@ type Parkings struct {
 // It sets the map and the last ID
 func NewParkings() *Parkings {
 	p := new(Parkings)
-	p.parkingList = make(map[int]*Parking)
+	p.parkingList = make(map[int]*model.Parking)
 	p.lastID = -1
 	return p
 }
@@ -36,6 +36,6 @@ func (p *Parkings) NewParking() (int, error) {
 	}
 
 	p.lastID++
-	p.parkingList[p.lastID] = NewParking(p.lastID)
+	p.parkingList[p.lastID] = model.NewParking(p.lastID)
 	return p.lastID, nil
 }
