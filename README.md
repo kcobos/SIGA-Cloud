@@ -98,6 +98,12 @@ We have looked for Linux built Go images and we have found:
 - **jcajka/fedora-golang**: non official image without any user.
   - [normal](https://github.com/jcajka/fedora-golang/blob/master/f25/Dockerfile). Uncompressed size: 516 MB
 
-So, the best option to build an image for that project is from *golang:alpine* image due it is official, it has the latest language version and it is the smallest. It is even used in [docker examples](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds). [Read more image comparison here](https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/Comparacion_imagenes.md).
+So, the best option to build an image for that project is from *golang:alpine* image due it is official, it has the latest language version and it is the smallest. It is even used in [docker examples](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds). [Read more image comparison here (in spanish)](https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/Comparacion_imagenes.md).
 
 Due this image is for testing, we cannot optimize the image because we cannot do a [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds) build.
+
+### DockerHub
+
+This repository is linked to DockerHub to automatically create images when new code is uploaded. At the moment, we only have one image for testing purposes and we integrate it into a CI.
+
+For more information on how to create it, check [this (in Spanish)] (https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/configuracion_dockerhub.md).
