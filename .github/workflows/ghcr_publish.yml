@@ -28,7 +28,4 @@ jobs:
       - name: Push image to GitHub Container Registry
         run: |
           TAG=ghcr.io/${{ github.repository }}:latest
-          # Change all uppercase to lowercase
-          TAG=${TAG,,}
-          echo TAG=$TAG
-          docker push $TAG
+          docker push ${TAG,,}
