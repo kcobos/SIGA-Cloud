@@ -106,4 +106,14 @@ Due this image is for testing, we cannot optimize the image because we cannot do
 
 This repository is linked to DockerHub to automatically create images when new code is uploaded. At the moment, we only have one image for testing purposes and we integrate it into a CI.
 
-For more information on how to create it, check [this (in Spanish)] (https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/configuracion_dockerhub.md).
+For more information on how to create it, check [this (in Spanish)](https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/configuracion_dockerhub.md).
+
+### GitHub Container Registry
+
+In addition to DockerHub we have used [Github Actions](https://github.com/features/actions) to create the same testing image and upload it to [GitHub Container Registry](https://ghcr.io/). [This image](https://github.com/users/kcobos/packages/container/package/siga-cloud) is also public and to download it you have to type on your terminal:
+
+```bash
+docker pull ghcr.io/kcobos/siga-cloud:latest
+```
+
+The action which create the image is [here](.github/workflows/ghcr_publish.yml)
