@@ -14,3 +14,4 @@ WORKDIR /app/test
 
 # Run test through task runner
 CMD [ "task", "test" ]
+
