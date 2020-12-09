@@ -19,7 +19,7 @@ jobs:
 
       - name: Build image
         run: |
-          TAG=${{ github.repository }}
+          TAG=ghcr.io/${{ github.repository }}:latest
           docker build -f dockerfile.test -t ${TAG,,} .
 
       - name: Log into GitHub Container Registry
@@ -27,8 +27,8 @@ jobs:
 
       - name: Push image to GitHub Container Registry
         run: |
-          IMAGE_ID=ghcr.io/${{ github.repository }}:latest
+          TAG=ghcr.io/${{ github.repository }}:latest
           # Change all uppercase to lowercase
-          IMAGE_ID=${IMAGE_ID,,}
-          echo IMAGE_ID=$IMAGE_ID
-          docker push $IMAGE_ID
+          TAG=${TAG,,}
+          echo TAG=$TAG
+          docker push $TAG
