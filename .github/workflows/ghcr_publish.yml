@@ -8,9 +8,6 @@ on:
       - dockerfile.test
       - Taskfile.yml
 
-env:
-  IMAGE_NAME_TESTING: testing
-
 jobs:
   # Push image to GitHub Packages.
   ghr_push:
@@ -21,16 +18,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build -f dockerfile.test -t $IMAGE_NAME_TESTING .
+        run: |
+          TAG=${{ github.repository }}
+          docker build -f dockerfile.test -t ${TAG,,} .
 
       - name: Log into GitHub Container Registry
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Push image to GitHub Container Registry
         run: |
-          IMAGE_ID=ghcr.io/${{ github.repository }}/$IMAGE_NAME_TESTING:latest
+          IMAGE_ID=ghcr.io/${{ github.repository }}:latest
           # Change all uppercase to lowercase
           IMAGE_ID=${IMAGE_ID,,}
           echo IMAGE_ID=$IMAGE_ID
-          docker tag $IMAGE_NAME_TESTING $IMAGE_ID
           docker push $IMAGE_ID
