@@ -106,6 +106,12 @@ Due this image is for testing, we cannot optimize the image because we cannot do
 
 This repository is linked to DockerHub to automatically create images when new code is uploaded. At the moment, we only have one image for testing purposes and we integrate it into a CI.
 
+[The image](https://hub.docker.com/r/kcobos/siga-cloud) is public and you can download it by:
+
+```bash
+docker pull kcobos/siga-cloud
+```
+
 For more information on how to create it, check [this (in Spanish)](https://github.com/kcobos/Ejercicios-CC/blob/master/Tema3/configuracion_dockerhub.md).
 
 ### GitHub Container Registry
