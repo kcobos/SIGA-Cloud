@@ -33,4 +33,4 @@ jobs:
           IMAGE_ID=${IMAGE_ID,,}
           echo IMAGE_ID=$IMAGE_ID
           docker tag $IMAGE_NAME_TESTING $IMAGE_ID
-          docker push $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID
