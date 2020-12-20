@@ -5,7 +5,7 @@ name: Publish container to GitHub Registry
 on:
   push:
     paths:
-      - dockerfile.test
+      - test.Dockerfile
       - Taskfile.yml
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Build image
         run: |
           TAG=ghcr.io/${{ github.repository }}:latest
-          docker build -f dockerfile.test -t ${TAG,,} .
+          docker build -f test.Dockerfile -t ${TAG,,} .
 
       - name: Log into GitHub Container Registry
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
