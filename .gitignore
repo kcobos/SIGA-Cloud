@@ -18,8 +18,5 @@ bin/
 # vendor/
 pkg/
 
-# Module
-go.sum
-
 #VS Code
 .vscode
