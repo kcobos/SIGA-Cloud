@@ -1,8 +1,8 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: kcobos/siga-cloud
-    working_directory: /app/test
     steps:
       - checkout
+      - run: task test
