@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/kcobos/SIGA-Cloud.svg?branch=main)](https://travis-ci.com/kcobos/SIGA-Cloud)
+[![CircleCI](https://circleci.com/gh/kcobos/SIGA-Cloud.svg?style=svg)](https://circleci.com/gh/kcobos/SIGA-Cloud)
+[![Build status](https://ci.appveyor.com/api/projects/status/fy9naye70jkeoxl6?svg=true)](https://ci.appveyor.com/project/kcobos/siga-cloud)
+
 # SIGA-Cloud
 
 SIGA (Sistema Integral de Gestión de Aparcamientos (Integral Parking Management System)) pretends to be a solution for parkings problem at 21's century. Specifically, SIGA is designed for reserved parkings in public area, like authorities, ambulances or, its main aim, disabled parkings. It tries to get any kind of information about these parkings (location, parking type, occupation status), process the information and to serve it as easy as possible to all citizens and users. The original documentation about this project is on <https://github.com/kcobos/SIGA>.
@@ -83,6 +87,16 @@ task test
 - [Parking controller test](internal/controllers/parkings_test.go)
 - [Place test](internal/models/place_test.go)
 - [Place controller test](internal/controllers/places_test.go)
+
+### CI (Automated testing of this repository)
+
+This repository is configured to be tested by [Travis CI](https://travis-ci.com/github/kcobos/SIGA-Cloud), [CircleCI](https://circleci.com/) and [AppVeyor](https://ci.appveyor.com/project/kcobos/siga-cloud). In each CI we have tested the following:
+
+- [Travis CI](https://travis-ci.com/github/kcobos/SIGA-Cloud): minimum and latest language version.
+- [CircleCI](https://circleci.com/): latest language version through [DockerHub image for testing](#dockerhub).
+- [AppVeyor](https://ci.appveyor.com/project/kcobos/siga-cloud): major language version between minimum and latest.
+
+Due to [Travis CI free plan](https://docs.travis-ci.com/user/billing-overview) and [CircleCI](https://circleci.com/pricing/) has limited credits, we have chosen [AppVeyor](https://ci.appveyor.com/project/kcobos/siga-cloud) with all major language versions.
 
 ## Dockerize for testing
 
