@@ -1,0 +1,16 @@
+version: 1.0.{build}
+
+image:
+  - Ubuntu
+
+build: off
+stack:
+  - go 1.13
+  - go 1.14
+
+install:
+  - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+  - ./bin/task installdeps
+
+test_script:
+  - ./bin/task test
