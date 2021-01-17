@@ -1,4 +1,11 @@
 name: Test
+
+on:
+  push:
+    paths:
+      - Taskfile.yml
+      - internal/*
+
 jobs:
   test:
     strategy:
