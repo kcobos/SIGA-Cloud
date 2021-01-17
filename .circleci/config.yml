@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: kcobos/siga-cloud
+    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    steps:
+      - checkout
+      - run: |
+          docker run --rm -it -v `pwd`:/app/test kcobos/siga-cloud sh
