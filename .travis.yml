@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - 1.5
+  - "1.10"
+  - master
+
+before_script:
+  - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+
+script:
+  - task test
