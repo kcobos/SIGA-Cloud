@@ -9,4 +9,4 @@ before_script:
   - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 script:
-  - task test
+  - ./bin/task test
