@@ -8,6 +8,7 @@ jobs:
       - run: task test
 
 workflows:
+  version: 2
   docker_test:
     jobs:
       - test
