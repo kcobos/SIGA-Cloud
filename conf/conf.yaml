@@ -1,0 +1,6 @@
+db:
+  host: siga-db
+  port: 5432
+  name: places
+  user: siga
+  pass: ""

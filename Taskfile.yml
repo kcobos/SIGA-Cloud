@@ -4,13 +4,13 @@ tasks:
   syntax:
     desc: Check project syntax.
     cmds:
-      - go build ./internal/... && echo "Syntax valid for parking module" || echo "Syntax invalid for parking module"
+      - go build ./... && echo "Syntax valid for parking module" || echo "Syntax invalid for parking module"
     silent: true
 
   test:
     desc: Run project tests.
-    cmds: 
-      - go test ./internal/...
+    cmds:
+      - export DB_PASS=siga2021 && go test ./...
 
   installdeps:
     desc: Install project dependencies.
