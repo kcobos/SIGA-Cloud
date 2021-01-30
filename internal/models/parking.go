@@ -41,7 +41,7 @@ func (p *Parking) Status() (ParkingStatus, error) {
 // ChangeStatus sets new status to Parking if it's valid
 func (p *Parking) ChangeStatus(newStatus string) (bool, error) {
 	status := getStatus(newStatus)
-	if status > -2 {
+	if status >= free && status <= occupied {
 		p.status = status
 		return true, nil
 	}
