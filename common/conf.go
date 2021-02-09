@@ -1,4 +1,4 @@
-package conf
+package common
 
 import (
 	"io/ioutil"
