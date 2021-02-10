@@ -16,6 +16,7 @@ func TestNewConfiguration(t *testing.T) {
 			g.Assert(c.DB.Name).Equal("places")
 			g.Assert(c.DB.User).Equal("siga")
 			g.Assert(c.DB.Pass).Equal("siga2021")
+			g.Assert(c.DB.Test).IsTrue()
 		})
 	})
 }

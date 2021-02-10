@@ -4,3 +4,4 @@ db:
   name: places
   user: siga
   pass: ""
+  test: true

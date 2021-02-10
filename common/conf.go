@@ -20,6 +20,7 @@ type Conf struct {
 		Name string `yaml:"name"`
 		User string `yaml:"user"`
 		Pass string `yaml:"pass"`
+		Test bool   `yaml:"test"`
 	}
 }
 
