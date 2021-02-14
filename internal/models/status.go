@@ -3,17 +3,17 @@ package model
 type ParkingStatus int
 
 const (
-	statusNotValid ParkingStatus = iota - 1
-	free
-	occupied
+	StatusNotValid ParkingStatus = iota - 1
+	Free
+	Occupied
 )
 
 func getStatus(newStatus string) ParkingStatus {
 	switch newStatus {
 	case "free":
-		return free
+		return Free
 	case "occupied":
-		return occupied
+		return Occupied
 	}
-	return statusNotValid
+	return StatusNotValid
 }
