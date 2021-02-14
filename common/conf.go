@@ -9,9 +9,6 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// YAMLname is config filename
-const YAMLname = "conf.yaml"
-
 // Conf is the application configuration
 type Conf struct {
 	DB struct {
@@ -25,22 +22,22 @@ type Conf struct {
 }
 
 // NewConf reads and save application config
-func NewConf() *Conf {
+func NewConf(YAMLFilePath string) *Conf {
 	c := new(Conf)
-	readFromYAML(c)
+	readFromYAML(c, YAMLFilePath)
 	readFromEnvironment(c)
 	return c
 }
 
-func readFromYAML(c *Conf) {
-	yamlFile, err := ioutil.ReadFile(YAMLname)
+func readFromYAML(c *Conf, YAMLFilePath string) {
+	yamlFile, err := ioutil.ReadFile(YAMLFilePath)
 	if err != nil {
-		log.Printf("error opening %s -> %v ", YAMLname, err)
+		log.Printf("error opening %s -> %v ", YAMLFilePath, err)
 	}
 
 	err = yaml.Unmarshal(yamlFile, c)
 	if err != nil {
-		log.Printf("error reading %s -> %v ", YAMLname, err)
+		log.Printf("error reading %s -> %v ", YAMLFilePath, err)
 	}
 }
 

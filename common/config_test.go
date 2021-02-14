@@ -9,7 +9,7 @@ import (
 func TestNewConfiguration(t *testing.T) {
 	g := goblin.Goblin(t)
 	g.Describe("Create configuration", func() {
-		c := NewConf()
+		c := NewConf("conf.yaml")
 		g.It("Configuration has to be equal than in file", func() {
 			g.Assert(c.DB.Host).Equal("siga-db")
 			g.Assert(c.DB.Port).Equal(5432)
