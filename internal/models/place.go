@@ -6,34 +6,33 @@ import (
 
 // Place represents a parking location
 type Place struct {
-	id                  int
-	latitude, longitude float64
-	address             string
-	parkings            []int
-	freeParkings        int
+	ID                  int64
+	Latitude, Longitude float64
+	Address             string
+	Parkings            []*Parking `pg:"rel:has-many"`
+	FreeParkings        int
 }
 
 // NewPlace create a place object
-func NewPlace(id int, latitude, longitude float64, address string, parkings []*Parking) (*Place, error) {
+func NewPlace(latitude, longitude float64, address string, parkings []*Parking) (*Place, error) {
 	if len(parkings) == 0 {
 		return nil, &errors.NeedsAParkingSensor{}
 	}
 	p := new(Place)
-	p.id = id
-	p.latitude = latitude
-	p.longitude = longitude
-	p.address = address
-	p.freeParkings = 0
+	p.Latitude = latitude
+	p.Longitude = longitude
+	p.Address = address
+	p.FreeParkings = 0
 	for i := 0; i < len(parkings); i++ {
-		if pPlaceID := parkings[i].placeID; pPlaceID != -1 && pPlaceID != p.id {
+		if pPlaceID := parkings[i].PlaceID; pPlaceID != -1 {
 			return nil, &errors.ParkingSensorIsAlreadyAttached{}
 		}
-		parkings[i].placeID = p.id
+		parkings[i].PlaceID = p.ID
 
-		p.parkings = append(p.parkings, parkings[i].id)
+		p.Parkings = append(p.Parkings, parkings[i])
 
-		if status, err := parkings[i].Status(); err == nil && status == free {
-			p.freeParkings += 1
+		if status, err := parkings[i].GetStatus(); err == nil && status == Free {
+			p.FreeParkings++
 		}
 	}
 	return p, nil
@@ -41,15 +40,10 @@ func NewPlace(id int, latitude, longitude float64, address string, parkings []*P
 
 // Location returns Place location
 func (p *Place) Location() (float64, float64) {
-	return p.latitude, p.longitude
+	return p.Latitude, p.Longitude
 }
 
-// Address returns Place address
-func (p *Place) Address() string {
-	return p.address
-}
-
-// Parkings returns Place total parkings and free
-func (p *Place) Parkings() (int, int) {
-	return len(p.parkings), p.freeParkings
+// GetParkings returns Place total parkings and free
+func (p *Place) GetParkings() (int, int) {
+	return len(p.Parkings), p.FreeParkings
 }

@@ -3,51 +3,50 @@ package model
 import (
 	"testing"
 
-	. "github.com/franela/goblin"
+	"github.com/franela/goblin"
 	"github.com/kcobos/SIGA-Cloud/internal/errors"
 )
 
 func TestNewParking(t *testing.T) {
-	g := Goblin(t)
+	g := goblin.Goblin(t)
 	g.Describe("Set up parking sensor (HU #2)", func() {
-		parking := NewParking(1)
-		g.It("Sensor has an unique ID", func() {
-			g.Assert(parking.id).Equal(1)
-		})
+		parking := NewParking()
+		// g.It("Sensor has an unique ID", func() {
+		// 	g.Assert(parking.ID).Equal(1)
+		// })
 		g.It("Sensor has a status and must be unavailable", func() {
-			g.Assert(parking.status).Equal(statusNotValid)
+			g.Assert(parking.Status).Equal(StatusNotValid)
 		})
 		g.It("Sensor must not be attached to any place", func() {
-			g.Assert(parking.placeID).Equal(-1)
+			g.Assert(parking.PlaceID).Equal(int64(-1))
 		})
 	})
 }
 
 func TestChangeStatus(t *testing.T) {
-	g := Goblin(t)
-	g.Describe("Update parking status (HU #7", func() {
-		p := NewParking(1)
+	g := goblin.Goblin(t)
+	g.Describe("Update parking status (HU #7)", func() {
+		p := NewParking()
 		g.It("Parking status must change", func() {
-			changed, _ := p.ChangeStatus("free")
-			g.Assert(changed).IsTrue()
-			status, _ := p.Status()
-			g.Assert(status).Equal(free)
+			err := p.ChangeStatus("free")
+			g.Assert(err).IsNil()
+			status, _ := p.GetStatus()
+			g.Assert(status).Equal(Free)
 		})
 		g.It("Parking status must change", func() {
-			changed, _ := p.ChangeStatus("occupied")
-			g.Assert(changed).IsTrue()
-			status, _ := p.Status()
-			g.Assert(status).Equal(occupied)
+			err := p.ChangeStatus("occupied")
+			g.Assert(err).IsNil()
+			status, _ := p.GetStatus()
+			g.Assert(status).Equal(Occupied)
 		})
 		g.It("Parking status must not change on invalid status", func() {
-			changed, err := p.ChangeStatus("other")
-			g.Assert(changed).IsFalse()
+			err := p.ChangeStatus("other")
 			g.Assert(err).Equal(&errors.StatusNotValid{})
-			status, _ := p.Status()
-			g.Assert(status).Equal(occupied)
+			status, _ := p.GetStatus()
+			g.Assert(status).Equal(Occupied)
 		})
 		g.It("Parking status must be logged", func() {
-			g.Assert(p.history.Len()).Equal(2)
+			g.Assert(len(p.History)).Equal(2)
 		})
 	})
 }
