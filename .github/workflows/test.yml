@@ -36,5 +36,9 @@ jobs:
       run: ./bin/task installdeps
     - name: Run tests
       env:
+        DB_HOST: localhost
+        DB_PORT: 5432
+        DB_NAME: places
+        DB_USER: siga
         DB_PASS: siga2021
       run: ./bin/task test
