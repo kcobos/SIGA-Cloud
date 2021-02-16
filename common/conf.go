@@ -46,7 +46,7 @@ func readFromEnvironment(c *Conf) {
 		c.DB.Host = os.Getenv("DB_HOST")
 	}
 	if c.DB.Port == 0 {
-		c.DB.Port, _ = strconv.Atoi(os.Getenv("DB_Port"))
+		c.DB.Port, _ = strconv.Atoi(os.Getenv("DB_PORT"))
 	}
 	if c.DB.Name == "" {
 		c.DB.Name = os.Getenv("DB_NAME")
