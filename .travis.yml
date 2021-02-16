@@ -1,12 +1,18 @@
 language: go
 
+services:
+  - postgresql
+
 go:
   - 1.13
   - master
 
 before_script:
+  - psql -c 'create database places;' -U postgres
   - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
   - ./bin/task installdeps
 
 script:
+  - export DB_PASS=''
+  - export DB_USER=postgres
   - ./bin/task test
