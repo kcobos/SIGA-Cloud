@@ -10,7 +10,7 @@ tasks:
   test:
     desc: Run project tests.
     cmds:
-      - export DB_PASS=siga2021 && go test ./...
+      - go test ./...
 
   installdeps:
     desc: Install project dependencies.
